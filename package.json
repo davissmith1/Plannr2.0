@@ -1,0 +1,23 @@
+{
+  "name": "plannr2.0",
+  "version": "1.0.0",
+  "description": "Scrum desktop app",
+  "main": "./src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davissmith1/Plannr2.0.git"
+  },
+  "author": "davissmith1",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/davissmith1/Plannr2.0/issues"
+  },
+  "homepage": "https://github.com/davissmith1/Plannr2.0#readme",
+  "devDependencies": {
+    "electron": "^27.1.2"
+  }
+}
