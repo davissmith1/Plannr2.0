@@ -20,15 +20,19 @@
     font-size: 16px;
     
 }
-.submit{
-    color:#858585;
-    
+
+.close Button{
+    color: #858585;
+    display: flex;
+    float: left;
 }
+
 .submit Button{
     color: #858585;
     display: flex;
     float: right;
 }
+
 
 .title{
     width: calc(100% - 10px);

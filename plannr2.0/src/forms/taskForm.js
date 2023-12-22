@@ -6,7 +6,7 @@ import Task from '../models/task';
 
 
 
-function TaskForm( {onSubmit}) {
+function TaskForm( { closeForm }) {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
 
@@ -21,13 +21,16 @@ function TaskForm( {onSubmit}) {
   const handleSubmit = (event) => {
     event.preventDefault();
     new Task(title, description);
-    onSubmit();
+    closeForm();
+  }
+  
+  const handleClose = (event) => {
+    event.preventDefault();
+    closeForm();
   }
 
     return (
     <div className='taskForm'>
-        <div className='close'>
-        </div>
         <form>
             <div className='input'>
                 <label>
@@ -48,6 +51,9 @@ function TaskForm( {onSubmit}) {
                     onChange={ handleDescriptionChange }
                     />
                 </label>
+            </div>
+            <div className='close'>
+              <Button onClick={ handleClose }>Cancel</Button>
             </div>
             <div className='submit'>
                 <Button onClick={ handleSubmit }>Submit</Button>

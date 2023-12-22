@@ -37,7 +37,13 @@ class Task{
         const time = `${dateString} ${timeString}`;
 
         return time;
+    }
 
+    deleteTask(){
+        //removes task from a bin and dereferences 
+        console.log('delete called')
+        this.assignedBin.remove(this);
+        this.assignedBin = null
     }
 
 } export default Task;

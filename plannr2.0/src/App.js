@@ -20,7 +20,7 @@ function App() {
   return (
     <div className='App'>
         <div className='addIcon'>
-          <AddIcon onClick={handleAddIconClick} />
+          <AddIcon onClick={ handleAddIconClick } />
         </div>
         
         
@@ -28,13 +28,8 @@ function App() {
     
         
         {isFormOpen && (
-        <div className="popupForm">
-          <div className='close'>
-            <CloseIcon onClick={handleCloseForm} />
-          </div>
-          
-          <TaskForm onSubmit={handleCloseForm}/>
-          
+        <div className="popupForm"> 
+          <TaskForm closeForm= { handleCloseForm }/>
         </div>
         )}
         
