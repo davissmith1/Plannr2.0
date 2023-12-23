@@ -3,10 +3,10 @@
 //bin object
 //Each bin contains a list of tasks
 class Bin {
-    constructor(name){
+    constructor(name, id){
         this.name = name;
         this.bin = [];
-
+        this.id = id;
     }
     getName(){
         return this.name

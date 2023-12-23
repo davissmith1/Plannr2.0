@@ -3,7 +3,7 @@ import '../styles/bin.css'
 import TaskListDisplay from './taskListDisplay'
 
 
-function BinDisplay({ bin, index}) {
+function BinDisplay({ bin, index, taskChange}) {
   
   return (
     <div className='bin'>
@@ -13,7 +13,7 @@ function BinDisplay({ bin, index}) {
         </h1>
       </div>
       <div className='tasks'>
-        <TaskListDisplay taskList={bin.getAllTasks()} />
+        <TaskListDisplay taskList={bin.getAllTasks()} taskChange={taskChange} />
       </div>
 
     </div>

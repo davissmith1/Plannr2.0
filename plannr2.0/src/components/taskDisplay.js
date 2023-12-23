@@ -5,7 +5,7 @@ import CloseIcon from '@mui/icons-material/Close';
 import { useState } from 'react';
 
 
-function TaskDisplay( { id, task, onDelete}) {
+function TaskDisplay( { id, task, onDelete, taskChange}) {
     const [isTaskOpen, setIsTaskOpen] = useState(false);
 
     const handleTaskClick = () => {
@@ -14,7 +14,12 @@ function TaskDisplay( { id, task, onDelete}) {
     
     const handleDelete = () => {
         task.deleteTask();
-        onDelete();
+        taskChange();
+    }
+    const handleMove = () => {
+        console.log('handle move, taskDisplay.js')
+        task.changeBin();
+        taskChange();
     }
   
     return (
@@ -29,7 +34,7 @@ function TaskDisplay( { id, task, onDelete}) {
                 <CloseIcon fontSize='small' onClick= { handleDelete }/>
             </div>
             <div className='arrowIcon'>
-                <ArrowForwardIcon fontSize='small'/>
+                <ArrowForwardIcon fontSize='small' onClick = { handleMove }/>
             </div>
         </div>
         {isTaskOpen && (

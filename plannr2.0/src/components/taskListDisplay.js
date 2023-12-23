@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import TaskDisplay from './taskDisplay'
 
-function TaskListDisplay( { taskList } ) {
+function TaskListDisplay( { taskList, taskChange } ) {
   const[counter, setCounter] = useState(taskList.length)
 
   const handleDelete = () => {
@@ -11,7 +11,7 @@ function TaskListDisplay( { taskList } ) {
     <div className='tasks'>
       {taskList.map((task, index) =>{
         return(
-          <TaskDisplay id={index} task={task} onDelete={handleDelete}  />
+          <TaskDisplay id={index} task={task} onDelete={handleDelete} taskChange={taskChange} />
         );
       })}
     </div>

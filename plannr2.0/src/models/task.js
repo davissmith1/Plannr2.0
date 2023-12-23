@@ -10,13 +10,24 @@ class Task{
         binList[0].add(this);
     }
 
-    changeBin(newBin){
-        if(newBin == null){
-            return false
-        }
-        else if(newBin.id){
-            //TODO: implement bin move feature
-        }
+    changeBin(){
+        let newId = 0;
+        //if not in bin 2 moves to next been returns 1 on success 0 on failure
+        if(this.assignedBin.id <= binList.length - 2){
+            try{
+                newId = this.assignedBin.id + 1;
+                console.log(newId)
+                binList[newId].add(this);
+                console.log(binList[newId])
+                this.assignedBin.remove(this);
+                this.assignedBin = binList[newId];
+            }
+            catch(err){
+                console.log(err)
+                return 0;
+            }
+       }
+       return 0;
     }
     getName(){
         return this.taskName;
