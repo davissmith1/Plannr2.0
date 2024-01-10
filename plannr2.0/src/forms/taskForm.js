@@ -1,12 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import '../styles/taskForm.css'
 import { useState } from 'react'
 import Button from '@mui/material/Button';
-import Task from '../models/task';
+import TaskContext from '../context/taskContext.js';
 
 
 
-function TaskForm( { closeForm }) {
+function TaskForm( { closeForm, createTask }) {
   const [title, setTitle] = useState('')
   const [description, setDescription] = useState('')
 
@@ -20,7 +20,7 @@ function TaskForm( { closeForm }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    new Task(title, description);
+    createTask(title, description);
     closeForm();
   }
   

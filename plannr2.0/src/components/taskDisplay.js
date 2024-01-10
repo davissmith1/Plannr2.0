@@ -5,25 +5,21 @@ import CloseIcon from '@mui/icons-material/Close';
 import { useState } from 'react';
 
 
-function TaskDisplay( { id, task, onDelete, taskChange}) {
+
+function TaskDisplay( { key, task, onDelete, onBinChange}) {
     const [isTaskOpen, setIsTaskOpen] = useState(false);
 
     const handleTaskClick = () => {
       setIsTaskOpen(!isTaskOpen);
     };
-    
-    const handleDelete = () => {
-        task.deleteTask();
-        taskChange();
-    }
-    const handleMove = () => {
-        console.log('handle move, taskDisplay.js')
-        task.changeBin();
-        taskChange();
+
+    const handleBinChange = () =>{
+        //TODO: implement bin change
+        console.log("bin changed");
     }
   
     return (
-    <div className='task'>
+    <div className='task' onClick={ handleTaskClick }>
         <div className='task-title'>
             <h1>
             {task.taskName}
@@ -31,20 +27,20 @@ function TaskDisplay( { id, task, onDelete, taskChange}) {
         </div>
         <div className='buttons'>
             <div className='closeIcon'>
-                <CloseIcon fontSize='small' onClick= { handleDelete }/>
+                <CloseIcon fontSize='small' />
             </div>
             <div className='arrowIcon'>
-                <ArrowForwardIcon fontSize='small' onClick = { handleMove }/>
+                <ArrowForwardIcon fontSize='small' />
             </div>
         </div>
         {isTaskOpen && (
             <div className='task-description'>
-                { task.getDescription()}
+                { task.description}
             </div>
         )}
         <div className='task-date'>
             <p>
-                { task.getCreationDate() }
+                { task.createdAt.toDateString() }
             </p>
         </div>
     </div>

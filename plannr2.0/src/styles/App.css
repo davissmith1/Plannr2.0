@@ -14,6 +14,11 @@ root {
     position: absolute;
 }
 
+.bins{
+    display: flex;
+    flex-direction: row;
+}
+
 .addIcon{
     position:absolute;
     top: 0;

@@ -1,21 +1,33 @@
 import React, { useState } from 'react'
 import TaskDisplay from './taskDisplay'
 
-function TaskListDisplay( { taskList, taskChange } ) {
-  const[counter, setCounter] = useState(taskList.length)
+function TaskListDisplay({binIndex, tasks, setTasks}) {
+ 
+  
+  // //task bin id as parameter
+  // const deleteTask = (id) => {
+  //   setTasks(tasks.filter((task) => task.bin !== id));
+  // };
 
-  const handleDelete = () => {
-    setCounter(counter -1);
-  }
-  return (
-    <div className='tasks'>
-      {taskList.map((task, index) =>{
-        return(
-          <TaskDisplay id={index} task={task} onDelete={handleDelete} taskChange={taskChange} />
-        );
-      })}
-    </div>
-  )
+  // //change bin
+  // //takes new bin id as parameter
+  // const changeBin = (id) => {
+  //   setTasks(tasks.map(task => task.bin === id ? { ...task, assignedBin: id } : task));
+  // };
+
+  // // Get tasks for a certain bin
+  // // const binTasks = tasks.filter(task => task.assignedBin === binIndex);
+    return (
+      <div className='tasks'>
+        {tasks.filter(task => task.bin === binIndex).map(task => (
+          <TaskDisplay
+            task={task}
+            // onDelete={() => deleteTask(task.id)}
+            // onBinChange={(newBin) => changeBin(task.id, newBin)}
+          />
+        ))}
+      </div>
+    )
 }
 
 export default TaskListDisplay
