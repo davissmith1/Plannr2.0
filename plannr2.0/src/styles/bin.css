@@ -1,0 +1,31 @@
+.bin{
+    background-color: #D6D6D6;
+    border-radius: 15px;
+    width: 180px;
+    height: auto;
+    min-height: 345px;
+    margin: 5px;
+    margin-top: 0px;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.title{
+    margin: 0px;
+    margin-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.title h1{
+    margin: 0px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #858585;
+}
+
+.binList{
+    display: flex;
+    flex-direction: row;
+}
