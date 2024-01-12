@@ -13,7 +13,7 @@ function App() {
         id: 0,
         taskName: 'Test Task',
         description: 'This is a default task',
-        bin: 0,
+        bin: 1,
         createdAt: new Date(),
       }
   

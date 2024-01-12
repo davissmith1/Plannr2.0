@@ -14,9 +14,18 @@ function TaskDisplay( { key, task, onDelete, onBinChange}) {
     };
 
     const handleBinChange = () =>{
-        //TODO: implement bin change
+        if (task.bin === 2){}
+
+        else{
+            onBinChange(task.bin + 1);
+        }
         console.log("bin changed");
     }
+
+    const handleDelete = () => {
+        //event.stopPropagation(); // Prevent triggering handleTaskClick
+        onDelete(task.id);
+    };
   
     return (
     <div className='task' onClick={ handleTaskClick }>
@@ -27,10 +36,10 @@ function TaskDisplay( { key, task, onDelete, onBinChange}) {
         </div>
         <div className='buttons'>
             <div className='closeIcon'>
-                <CloseIcon fontSize='small' />
+                <CloseIcon fontSize='small' onClick={ handleDelete } />
             </div>
             <div className='arrowIcon'>
-                <ArrowForwardIcon fontSize='small' />
+                <ArrowForwardIcon fontSize='small' onClick={ handleBinChange }/>
             </div>
         </div>
         {isTaskOpen && (
@@ -40,7 +49,7 @@ function TaskDisplay( { key, task, onDelete, onBinChange}) {
         )}
         <div className='task-date'>
             <p>
-                { task.createdAt.toDateString() }
+                { task.createdAt.toLocaleTimeString() }
             </p>
         </div>
     </div>
