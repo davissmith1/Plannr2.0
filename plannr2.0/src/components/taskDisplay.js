@@ -10,7 +10,10 @@ function TaskDisplay( { key, task, onDelete, onBinChange}) {
     const [isTaskOpen, setIsTaskOpen] = useState(false);
 
     const handleTaskClick = () => {
-      setIsTaskOpen(!isTaskOpen);
+      if(task.description != '' || task.description != null){
+        console.log(task.description);
+        setIsTaskOpen(!isTaskOpen);
+      }
     };
 
     const handleBinChange = () =>{
@@ -26,6 +29,11 @@ function TaskDisplay( { key, task, onDelete, onBinChange}) {
         //event.stopPropagation(); // Prevent triggering handleTaskClick
         onDelete(task.id);
     };
+
+    const formattedDate = (task.createdAt.getMonth() + 1).toString() + '/' +
+        task.createdAt.getDate().toString() + ' ' +
+        task.createdAt.getHours().toString() + ':' +
+        task.createdAt.getMinutes().toString().padStart(2, '0');
   
     return (
     <div className='task' onClick={ handleTaskClick }>
@@ -49,7 +57,7 @@ function TaskDisplay( { key, task, onDelete, onBinChange}) {
         )}
         <div className='task-date'>
             <p>
-                { task.createdAt.toLocaleTimeString() }
+                { formattedDate }
             </p>
         </div>
     </div>

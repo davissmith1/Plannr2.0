@@ -23,10 +23,8 @@ function BinDisplay({ binName, index, tasks, setTasks}) {
         </h1>
       </div>
       <div className='tasks'>
-        {/* <TaskListDisplay taskList={bin.getAllTasks()} taskChange={taskChange} /> */}
         <TaskListDisplay binIndex={index} tasks={tasks} setTasks={setTasks}/>
       </div>
-
     </div>
   )
 }
