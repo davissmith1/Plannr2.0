@@ -3,7 +3,7 @@ import '../styles/task.css'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CloseIcon from '@mui/icons-material/Close';
 import { useState } from 'react';
-
+import {useDraggable} from '@dnd-kit/core';
 
 
 function TaskDisplay( { key, task, onDelete, onBinChange}) {
@@ -36,7 +36,14 @@ function TaskDisplay( { key, task, onDelete, onBinChange}) {
         task.createdAt.getMinutes().toString().padStart(2, '0');
   
     return (
-    <div className='task' onClick={ handleTaskClick }>
+    <div 
+        className='task' 
+        onClick={ handleTaskClick }
+        draggable={true}
+        onDragStart={event => {
+            event.dataTransfer.setData('text/plain', task.id);
+        }}
+    >
         <div className='task-title'>
             <h1>
             {task.taskName}
