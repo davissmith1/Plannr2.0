@@ -38,8 +38,13 @@ function TaskForm( { closeForm, createTask }) {
                     placeholder='Title' 
                     value = {title}
                     onChange={ handleTitleChange }
+                    maxLength={40}
+                    required
                     />
                 </label>
+                <div className='charCount'>
+                  <p>{title.length}/40</p>
+                </div>
                 <label>
                     <textarea 
                     className='description' 
@@ -47,8 +52,12 @@ function TaskForm( { closeForm, createTask }) {
                     placeholder='Description'
                     value={description}
                     onChange={ handleDescriptionChange }
+                    maxLength={350}
                     />
                 </label>
+                <div className='charCount'>
+                  <p>{description.length}/350</p>
+                </div>
             </div>
             <div className='close'>
               <Button onClick={ handleClose }>Cancel</Button>

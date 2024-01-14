@@ -3,12 +3,13 @@
     border-radius: 15px;
     width: 180px;
     height: auto;
-    min-height: 345px;
+    min-height: 390px;
     margin: 5px;
     margin-top: 0px;
     padding: 5px;
     display: flex;
     flex-direction: column;
+    overflow: auto;
 }
 
 .title{

@@ -11,9 +11,9 @@ function App() {
   
   let defaultTasks = {
         id: 0,
-        taskName: 'Test Task',
-        description: 'This is a default task',
-        bin: 1,
+        taskName: 'This is a task with a long name',
+        description: null,
+        bin: 0,
         createdAt: new Date(),
       }
   

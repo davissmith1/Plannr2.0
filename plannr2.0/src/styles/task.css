@@ -8,6 +8,7 @@
     margin-top: 5px;
     margin-bottom: 5px;
     position: relative;
+    -webkit-app-region: no-drag;
 }
 
 .task-title h1{
@@ -16,7 +17,7 @@
     color: #858585;
     margin: 0px;
     margin-bottom: 5px;
-    width: 135px;
+    width: 130px;
     
 }
 
@@ -37,6 +38,7 @@
     display:flex;
     flex-direction: row;
     margin-left: 5px;
+    -webkit-app-region: no-drag;
 }
 
 .closeIcon{

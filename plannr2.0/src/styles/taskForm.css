@@ -1,12 +1,13 @@
 .taskForm{
     width: 300px;
-    height: 300px;
+    height: 320px;
     background-color: #F6F5F5;
     top: 0;
     left: 0;
     padding: 10px;
     border-radius: 15px;
     transform: translate(calc(50% - 10px), 10%);
+    -webkit-app-region: no-drag;
 }
 
 .close{
@@ -20,11 +21,22 @@
     font-size: 16px;
     
 }
+.charCount{
+   
+    margin: 0px;
+    font-size: 10px;
+    color: #858585;
+}
+.charCount p{
+    margin: 0px;
+    float: right;
+}
 
 .close Button{
     color: #858585;
     display: flex;
     float: left;
+    
 }
 
 .submit Button{
