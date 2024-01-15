@@ -4,19 +4,22 @@ import TaskListDisplay from './taskListDisplay'
 
 
 function BinDisplay({ binName, index, tasks, setTasks}) {
-  let defaultTasks = {
-    id: 0,
-    taskName: 'Default Task',
-    description: 'This is a default task',
-    bin: 0,
-    createdAt: new Date(),
-  }
-
-  //const [tasks, setTasks] = useState([defaultTasks]);
-  // //delete task
-  
+  const handleTaskDrop = (taskId) => {
+    setTasks(tasks.map(task => task.id === parseInt(taskId) ? { ...task, bin: index } : task));
+  };
   return (
-    <div className='bin'>
+    <div 
+      className='bin'
+      onDragOver={event => {
+        // Prevent the default to allow drop
+        event.preventDefault();
+      }}
+      onDrop={event => {
+        // Get the task ID from the drag data and handle the drop
+        const taskId = event.dataTransfer.getData('text/plain');
+        handleTaskDrop(taskId);
+      }}
+    >
       <div className='title'>
         <h1>
           {binName}

@@ -3,22 +3,24 @@
     border-radius: 10px;
     width: auto;
     height: auto;
-    min-height: 45px;
+    min-height: 35px;
     padding: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     -webkit-app-region: no-drag;
 }
 
 .task-title h1{
     font-size: 16px;
     font-weight: normal;
+    width: auto;
+    max-width: 150px;
     color: #858585;
     margin: 0px;
-    margin-bottom: 5px;
-    width: 130px;
-    
 }
 
 .task-description{
@@ -37,7 +39,6 @@
     padding: 5px;
     display:flex;
     flex-direction: row;
-    margin-left: 5px;
     -webkit-app-region: no-drag;
 }
 
@@ -57,7 +58,7 @@
     right: 0;
     padding: 5px;
     font-size: 10px;
-    color: #858585
+    color: #858585;
 }
 
 .task-date p{
