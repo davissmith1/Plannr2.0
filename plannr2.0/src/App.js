@@ -9,6 +9,7 @@ import BinDisplay from './components/binDisplay.js';
 function App() {
   const [isFormOpen, setIsFormOpen] = useState(false);
   
+  //TODO: Remove this default task for dev purposes only
   let defaultTasks = {
         id: 0,
         taskName: 'This is a task with a long name',
@@ -40,12 +41,20 @@ function App() {
     
     setTasks([...tasks, newTask]);
   };
+
+  const date = new Date();
+  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
   return (
     <div className='App'>
+      <div className='date'>
+          <h1>
+            {daysOfWeek[date.getDay()]}, {date.toLocaleDateString()}
+          </h1>
+      </div>
         <div className='addIcon'>
           <AddIcon onClick={ handleAddIconClick } />
         </div>
-        
         <div className='bins'>
           <BinDisplay binName='To Do' index={0} tasks={tasks} setTasks={setTasks} />
           <BinDisplay binName='In Progress' index={1} tasks={tasks} setTasks={setTasks}/>

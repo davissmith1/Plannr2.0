@@ -16,24 +16,14 @@ function TaskDisplay( { key, task, onDelete, onBinChange}) {
       }
     };
 
-    const handleBinChange = () =>{
-        if (task.bin === 2){}
-
-        else{
-            onBinChange(task.bin + 1);
-        }
-        console.log("bin changed");
-    }
-
     const handleDelete = () => {
         //event.stopPropagation(); // Prevent triggering handleTaskClick
         onDelete(task.id);
     };
 
-    const formattedDate = (task.createdAt.getMonth() + 1).toString() + '/' +
-        task.createdAt.getDate().toString() + ' ' +
-        task.createdAt.getHours().toString() + ':' +
-        task.createdAt.getMinutes().toString().padStart(2, '0');
+    const formattedDate = 
+        (task.createdAt.getHours().toString() + ':' +
+        task.createdAt.getMinutes().toString().padStart(2, '0'));
   
     return (
     <div 
@@ -52,9 +42,6 @@ function TaskDisplay( { key, task, onDelete, onBinChange}) {
         <div className='buttons'>
             <div className='closeIcon'>
                 <CloseIcon fontSize='small' onClick={ handleDelete } />
-            </div>
-            <div className='arrowIcon'>
-                <ArrowForwardIcon fontSize='small' onClick={ handleBinChange }/>
             </div>
         </div>
         {isTaskOpen && (
