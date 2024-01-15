@@ -9,16 +9,7 @@ import BinDisplay from './components/binDisplay.js';
 function App() {
   const [isFormOpen, setIsFormOpen] = useState(false);
   
-  //TODO: Remove this default task for dev purposes only
-  let defaultTasks = {
-        id: 0,
-        taskName: 'This is a task with a long name',
-        description: null,
-        bin: 0,
-        createdAt: new Date(),
-      }
-  
-  const [tasks, setTasks] = useState([defaultTasks]);
+  const [tasks, setTasks] = useState([]);
   
   const handleAddIconClick = () => {
     setIsFormOpen(true);
@@ -42,15 +33,11 @@ function App() {
     setTasks([...tasks, newTask]);
   };
 
-  const date = new Date();
-  const daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+
 
   return (
     <div className='App'>
       <div className='date'>
-          <h1>
-            {daysOfWeek[date.getDay()]}, {date.toLocaleDateString()}
-          </h1>
       </div>
         <div className='addIcon'>
           <AddIcon onClick={ handleAddIconClick } />
