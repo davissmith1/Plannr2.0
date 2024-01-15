@@ -32,6 +32,7 @@ function TaskDisplay( { key, task, onDelete, onBinChange}) {
         draggable={true}
         onDragStart={event => {
             event.dataTransfer.setData('text/plain', task.id);
+            event.dataTransfer.effectAllowed = 'move';
         }}
     >
         <div className='task-title'>
